@@ -7,7 +7,7 @@ def request_server():
     request_body = bytes(9999999)
     request_header = "%s" % len(request_body)
     request_data = "%sdata:%s" % (request_header, request_body.decode('utf-8', 'ignore'))
-    client_socker.connect(("",8801))
+    client_socker.connect(("localhost",8801))
     client_socker.send(bytes(request_data, "utf-8"))
     
     response = client_socker.recv(1024)
